@@ -1,3 +1,6 @@
+# project: cj6eoa0g34syj0121t2ray1oa
+# version: 4
+
 type Link @model {
   id: ID! @isUnique
   createdAt: DateTime!
