@@ -5,7 +5,7 @@ class Login extends Component {
 
     state = {
         login: true, // switch between Login and SignUp
-        email: '',
+        username: '',
         password: '',
         name: ''
     }
@@ -14,8 +14,8 @@ class Login extends Component {
 
         return (
             <div>
-                <h4 className='mv3'>{this.state.login ? 'Login' : 'Sign Up'}</h4>
-                <div className='flex flex-column'>
+                <h4>{this.state.login ? 'Login' : 'Sign Up'}</h4>
+                <div>
                     {!this.state.login &&
                     <input
                         value={this.state.name}
@@ -24,8 +24,8 @@ class Login extends Component {
                         placeholder='Your name'
                     />}
                     <input
-                        value={this.state.email}
-                        onChange={(e) => this.setState({ email: e.target.value })}
+                        value={this.state.username}
+                        onChange={(e) => this.setState({ username: e.target.value })}
                         type='text'
                         placeholder='Your email address'
                     />
@@ -36,15 +36,13 @@ class Login extends Component {
                         placeholder='Choose a safe password'
                     />
                 </div>
-                <div className='flex mt3'>
+                <div>
                     <div
-                        className='pointer mr2 button'
                         onClick={() => this._confirm()}
                     >
                         {this.state.login ? 'login' : 'create account' }
                     </div>
                     <div
-                        className='pointer button'
                         onClick={() => this.setState({ login: !this.state.login })}
                     >
                         {this.state.login ? 'need to create an account?' : 'already have an account?'}
@@ -53,9 +51,32 @@ class Login extends Component {
             </div>
         )
     }
+  
+    users = [{
+        id: '1',
+        username: 'Adam',
+        password: '123'
+    }, {
+        id: '2',
+        username: 'William',
+        password: '123'
+    }, {
+        id: '3',
+        username: 'Priya',
+        password: '123'
+    }];
 
-    _confirm = async () => {
-        // ... you'll implement this in a bit
+    _confirm() {
+        const {username, password} = this.state;
+        var found = false;
+        this.users.forEach(function(data) {
+          if(data.username === username && data.password === password){
+            found = true;
+          }
+        });
+        if(found){
+            this._saveUserData(1, 1);
+        }
     }
 
     _saveUserData = (id, token) => {

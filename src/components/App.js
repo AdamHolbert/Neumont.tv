@@ -1,20 +1,16 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
-import CreateLink from './CreateLink'
-import LinkList from './LinkList'
 import Header from './Header'
 import Login from './Login'
 
 class App extends Component {
     render() {
         return (
-            <div className='center w85'>
+            <div>
                 <Header />
-                <div className='ph3 pv1 background-gray'>
+                <div>
                     <Switch>
-                        <Route exact path='/login' component={Login}/>
-                        <Route exact path='/create' component={CreateLink}/>
-                        <Route exact path='/' component={LinkList}/>
+                        <Route exact path='/' component={Login}/>
                     </Switch>
                 </div>
             </div>
