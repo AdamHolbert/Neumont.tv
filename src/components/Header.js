@@ -8,26 +8,26 @@ class Header extends Component {
     render() {
         const userId = localStorage.getItem(GC_USER_ID)
         return (
-            <div className='flex pa1 justify-between nowrap orange'>
-                <div className='flex flex-fixed black'>
-                    <div className='fw7 mr1'>Hacker News</div>
-                    <Link to='/' className='ml1 no-underline black'>new</Link>
+            <div>
+                <div>
+                    <div>Hacker News</div>
+                    <Link to='/'>new</Link>
                     {userId &&
-                    <div className='flex'>
-                        <div className='ml1'>|</div>
-                        <Link to='/create' className='ml1 no-underline black'>submit</Link>
+                    <div>
+                        <div>|</div>
+                        <Link to='/create'>submit</Link>
                     </div>
                     }
                 </div>
-                <div className='flex flex-fixed'>
+                <div>
                     {userId ?
-                        <div className='ml1 pointer black' onClick={() => {
+                        <div onClick={() => {
                             localStorage.removeItem(GC_USER_ID)
                             localStorage.removeItem(GC_AUTH_TOKEN)
-                            this.props.history.push(`/new/1`)
+                            this.props.history.push(`/`)
                         }}>logout</div>
                         :
-                        <Link to='/login' className='ml1 no-underline black'>login</Link>
+                        <Link to='/login'>login</Link>
                     }
                 </div>
             </div>
