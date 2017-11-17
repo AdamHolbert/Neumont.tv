@@ -8,76 +8,46 @@ class Categories extends Component {
             <div className='CategoriesList'>
                 <div className='CategoryName'>Auto & Vehicles</div>
                 <div className='CategoryVideos'>
-                    <div>
-                        1
-                    </div>
-                    <div>
-                        2
-                    </div>
-                    <div>
-                        3
-                    </div>
-                    <div>
-                        4
-                    </div>
-                    <div>
-                        5
-                    </div>
-                    <div>
-                        6
-                    </div>
-                    <div>
-                        7
-                    </div>
-                    <div>
-                        8
-                    </div>
-                    <div>
-                        9
-                    </div>
-                    <div>
-                        10
+                    <div className='VidContainer'>
+                        <div className='VidThumbnail'>
+                            vid
+                        </div>
+                        <div className='VidName'>
+                            Video Title
+                        </div>
                     </div>
 
-                    //Javascript iterate through list where each iteration
-                    //makes a div
+                    <div className='VidContainer'>
+                        <div className='VidThumbnail'>
+                            vid2
+                        </div>
+                        <div className='VidName'>
+                            Video Title
+                        </div>
+                    </div>
 
-
+                    <div className='VidContainer'>
+                        <div className='VidThumbnail'>
+                            vid3
+                        </div>
+                        <div className='VidName'>
+                            Video Title
+                        </div>
+                    </div>
                 </div>
 
                 <div className='CategoryName'>Beauty & Fashion</div>
                 <div className='CategoryVideos'>
-                    <div>
-                        1
-                    </div>
-                    <div>
-                        2
-                    </div>
-                    <div>
-                        3
-                    </div>
-                    <div>
-                        4
-                    </div>
-                    <div>
-                        5
-                    </div>
-                    <div>
-                        6
-                    </div>
-                    <div>
-                        7
-                    </div>
-                    <div>
-                        8
-                    </div>
-                    <div>
-                        9
-                    </div>
-                    <div>
-                        10
+                    <div className='VidContainer'>
+                        <div className='VidThumbnail'>
+                            vid1section2
+                        </div>
+                        <div className='VidName'>
+                            Video Title
+                        </div>
                     </div>
                 </div>
+
 
                 <div className='CategoryName'>Comedy</div>
                 <div className='CategoryVideos'>
