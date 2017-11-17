@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Search from './Search'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { GC_USER_ID, GC_AUTH_TOKEN } from '../constants'
@@ -30,6 +31,7 @@ class Header extends Component {
                         <Link to='/login'>login</Link>
                     }
                 </div>
+                <Search />
             </div>
         )
     }

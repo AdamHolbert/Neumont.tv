@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import Header from './Header'
 import Login from './Login'
 import Categories from "./Categories";
+import Homepage from './Homepage'
 
 class App extends Component {
     render() {
@@ -12,8 +13,8 @@ class App extends Component {
                 <div>
                     <Switch>
                         <Route exact path='/Categories' component={Categories}/>
-                        <Route exact path='/' component={Login}/>
-
+                        <Route exact path='/login' component={Login}/>
+                        <Route exact path='/' component={Homepage}/>
                     </Switch>
                 </div>
             </div>
