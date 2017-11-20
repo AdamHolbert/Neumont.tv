@@ -1,18 +1,24 @@
 .CategoriesList {
-
-}
-.CategoryVideos{
-    background: lightcoral;
-    border-radius: 10px;
-    width: 60%;
+    background-color: blue;
 }
 
-.CategoryVideos div {
-    display: inline-block;
+.VideoContainer {
     background-color: red;
     margin: 10px;
-    height: 50px;
-    width: 50px;
-    text-align: center;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
+}
+
+.VidName {
+    font-size: 25px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
