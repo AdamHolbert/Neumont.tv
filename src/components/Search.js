@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { GC_USER_ID } from '../constants'
+import '../styles/search.css'
 
 
 class Homepage extends Component {
@@ -19,10 +20,10 @@ class Homepage extends Component {
                     />
                     <div className='searchType'>
                     <select>
-                        <option value="volvo">Tags</option>
-                        <option value="saab">Keyword</option>
-                        <option value="opel">Title of Video</option>
-                        <option value="audi">Channel Name</option>
+                        <option value="Tags">Tags</option>
+                        <option value="Keyword">Keyword</option>
+                        <option value="Title">Title of Video</option>
+                        <option value="ChannelName">Channel Name</option>
                     </select>
                     </div>
                     <div className='searchButton'><button type="button">Search</button></div>

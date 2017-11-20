@@ -9,7 +9,8 @@ class App extends Component {
         return (
             <div>
                 <Header />
-                <div>
+                <div className='UserProfile'> </div>
+                <div className='Content'>
                     <Switch>
                         <Route exact path='/login' component={Login}/>
                         <Route exact path='/' component={Homepage}/>
