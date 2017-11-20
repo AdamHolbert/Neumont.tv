@@ -38,6 +38,14 @@ html {
     text-align: center;
 }
 
+.videoContainerRow {
+    justify-content: space-between;
+    margin: 1%;
+    padding: 1%;
+    display: flex;
+}
+
+
 .lineBreak {
     border: 1px solid black;
     margin-left: 4%;
