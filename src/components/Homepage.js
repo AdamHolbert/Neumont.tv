@@ -28,9 +28,9 @@ class Homepage extends Component {
                     <VideoContainer name='NEW VIDEOS:'/>
                 </div>
 
-                {this.userId ? <div> User Status: Logged in</div> : <div>User Status: logged out</div>}
+                    {this.userId ? <div> User Status: Logged in</div> : <div>User Status: logged out</div>}
 
-                </div>
+                    </div>
             </div>
         )
     }
