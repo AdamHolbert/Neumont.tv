@@ -12,7 +12,7 @@ class VideoContainer extends Component {
 
                     <div className='lineBreak'></div>
 
-                    <div>
+                    <div className='videoContainerVideos'>
 
                         <div className='videoContainerRow'>
                             <VideoThumbnail name='V-1' />
