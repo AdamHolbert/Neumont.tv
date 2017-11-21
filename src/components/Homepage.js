@@ -10,14 +10,6 @@ class Homepage extends Component {
     render() {
         return (
             <div>
-                <div className='Ads'>
-                    <Ads />
-                </div>
-
-                <div className='RepresentForUserProfile'>
-                    <Ads />
-                </div>
-
                 <div className='homeComponent'>
                     <div className='hotTopics'>
                     <VideoContainer name='HOT TOPICS:'/>
@@ -26,9 +18,6 @@ class Homepage extends Component {
                 <div className='newVideos'>
                     <VideoContainer name='NEW VIDEOS:'/>
                 </div>
-
-                {this.userId ? <div> User Status: Logged in</div> : <div>User Status: logged out</div>}
-
                 </div>
             </div>
         )

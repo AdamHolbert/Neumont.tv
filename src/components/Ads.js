@@ -7,7 +7,7 @@ class Ads extends Component {
     render() {
         return (
             <div className='Ads'>
-
+                Ads should be here!
             </div>
         )
     }
