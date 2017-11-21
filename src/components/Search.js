@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { GC_USER_ID } from '../constants'
 import '../styles/search.css'
+import Upload from "./Upload";
 
 
 class Homepage extends Component {
@@ -27,6 +28,7 @@ class Homepage extends Component {
                     </select>
                     </div>
                     <div className='searchButton'><button type="button">Search</button></div>
+                    <div className='uploadButton'><Upload /></div>
 
                 </div>
             </div>
