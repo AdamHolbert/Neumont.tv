@@ -1,9 +1,11 @@
 .CategoriesList {
-    background-color: blue;
+    background-color: #fec123;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .VideoContainer {
-    background-color: red;
+    background-color: #fec123;
     margin: 10px;
     height: 150px;
     width: 150px;

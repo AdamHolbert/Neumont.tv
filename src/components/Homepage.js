@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { GC_USER_ID } from '../constants'
 import VideoContainer from './VideoContainer'
 import Ads from './Ads'
+import UserProfile from "./UserProfile";
 
 
 class Homepage extends Component {
@@ -15,7 +16,7 @@ class Homepage extends Component {
                 </div>
 
                 <div className='RepresentForUserProfile'>
-                    <Ads />
+                    <UserProfile />
                 </div>
 
                 <div className='homeComponent'>
