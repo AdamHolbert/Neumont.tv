@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { GC_USER_ID } from '../constants'
 import VideoContainer from './VideoContainer'
-import Ads from './Ads'
 
 
 class Homepage extends Component {
@@ -10,6 +9,7 @@ class Homepage extends Component {
     render() {
         return (
             <div>
+
                 <div className='homeComponent'>
                     <div className='hotTopics'>
                     <VideoContainer name='HOT TOPICS:'/>
@@ -18,6 +18,7 @@ class Homepage extends Component {
                 <div className='newVideos'>
                     <VideoContainer name='NEW VIDEOS:'/>
                 </div>
+
                 </div>
             </div>
         )

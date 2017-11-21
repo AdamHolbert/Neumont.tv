@@ -5,6 +5,7 @@ import Login from './Login'
 import Categories from "./Categories";
 import Homepage from './Homepage'
 import Ads from './Ads'
+import UserProfile from "./UserProfile";
 import '../styles/App.css'
 
 class App extends Component {
@@ -15,7 +16,9 @@ class App extends Component {
                     <Header />
                 </div>
                 <div className='pageContentsBottom'>
-                    <div className='UserProfile'> </div>
+                    <div className='UserProfile'>
+                    <UserProfile/>
+                    </div>
 
                     <div className='Content'>
                         <Switch>
