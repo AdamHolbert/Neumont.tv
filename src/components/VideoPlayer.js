@@ -3,7 +3,7 @@ import { DefaultPlayer as Video } from 'react-html5video';
 import 'react-html5video/dist/styles.css';
 
 class VideoPlayer extends Component {
-  
+
   render() {
     return (
       <Video autoPlay loop muted
