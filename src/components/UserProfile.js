@@ -23,6 +23,12 @@ class UserProfile extends Component {
 
                 <div className='UserLinks'>
                     <div className='UserUploads'>
+                        Uploads
+                    </div>
+                    <div className='UserLikedVids'>
+                        Liked Videos
+                    </div>
+                    <div className='UserPlaylists'>
                         User Uploads:
                         <br />
                         <br />
@@ -37,7 +43,7 @@ class UserProfile extends Component {
                         <br />
                     </div>
                     <div className='UserPlaylists'>
-                        Playerlist:
+                        Playlist:
                         <br />
                         <br />
                         <br />
