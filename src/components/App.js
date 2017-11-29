@@ -9,7 +9,7 @@ import UserProfile from "./UserProfile";
 import Disclaimer from "./Disclaimer";
 import '../styles/App.css'
 import { HIDE_DISCLAIMER } from '../constants'
-
+import VideoSettings from "./VideoSettings";
 
 class App extends Component {
   
@@ -45,8 +45,9 @@ class App extends Component {
               <Switch>
                 <Route exact path='/Categories' component={Categories}/>
                 <Route exact path='/login' component={Login}/>
-                <Route exact path='/' component={Homepage}/>
                 <Route exact path='/ads' component={Ads}/>
+                <Route exact path='/video/settings' component={VideoSettings}/>
+                <Route exact path='/' component={Homepage}/>
               </Switch>
             </div>
     
