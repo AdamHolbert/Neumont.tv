@@ -19,17 +19,7 @@ class Homepage extends Component {
                         type='text'
                         placeholder='Create A Search Here'
                     />
-                    <div className='searchType'>
-                    <select>
-                        <option value="Tags">Tags</option>
-                        <option value="Keyword">Keyword</option>
-                        <option value="Title">Title of Video</option>
-                        <option value="ChannelName">Channel Name</option>
-                    </select>
-                    </div>
                     <div className='searchButton'><button type="button">Search</button></div>
-                    <div className='uploadButton'><Upload /></div>
-
                 </div>
             </div>
 
