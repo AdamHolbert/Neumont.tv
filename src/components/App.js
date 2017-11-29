@@ -10,6 +10,7 @@ import Disclaimer from "./Disclaimer";
 import '../styles/App.css'
 import { HIDE_DISCLAIMER } from '../constants'
 import VideoSettings from "./VideoSettings";
+import MoreInfo from "./MoreInfo";
 
 class App extends Component {
   
@@ -44,6 +45,7 @@ class App extends Component {
             <div className='Content'>
               <Switch>
                 <Route exact path='/Categories' component={Categories}/>
+                <Route exact path='/moreInfo' component={MoreInfo}/>
                 <Route exact path='/login' component={Login}/>
                 <Route exact path='/ads' component={Ads}/>
                 <Route exact path='/video/settings' component={VideoSettings}/>
