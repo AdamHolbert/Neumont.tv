@@ -13,7 +13,7 @@ import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
 // 2
-const httpLink = new HttpLink({ uri: 'https://api.graph.cool/simple/v1/cj9ri3jbt4o890101g81tgwgg' })
+const httpLink = new HttpLink({ uri: 'https://api.graph.cool/simple/v1/cjalf2w9q44g601404eymj41k' })
 
 const middlewareAuthLink = new ApolloLink((operation, forward) => {
     const token = localStorage.getItem(GC_AUTH_TOKEN)

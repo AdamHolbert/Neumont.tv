@@ -1,0 +1,90 @@
+
+.componentHolder{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.loginComponent {
+    color: #222;
+    background-color: #aaa;
+
+    align-self: center;
+    width: 50%;
+    min-width: 400px;
+    margin-top: 30px;
+    border: 2px solid #222;
+}
+
+@media only screen and (max-width: 700px) {
+    .loginComponent {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 30px;
+        height: 100%;
+    }
+}
+
+.loginTop {
+    height: 40px;
+    text-align: center;
+    font-size: xx-large;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: #222;
+}
+
+.loginSelected {
+    background-color: #aaa;
+    border-radius:20px 20px 0px 0px;
+    width: 50%;
+}
+
+.loginUnselected {
+    background-color: #888888;
+    border-radius:20px 20px 0px 0px;
+    width: 50%;
+    border-bottom: 2px solid #222;
+}
+
+.LBorder {
+    border-left: 2px solid #222;
+}
+
+.RBorder {
+    border-right: 2px solid #222;
+}
+
+.loginArea {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.loginSection {
+    width: 70%;
+    margin: 10px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginButton{
+    font-size: large;
+}
+
+.forgotPassword {
+    display: flex;
+    flex-direction: row;
+}
+
+.coolTextBox {
+    width: 100%;
+    font-size: larger;
+    border: 1px solid black;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
