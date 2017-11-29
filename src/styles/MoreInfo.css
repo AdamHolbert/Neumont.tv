@@ -1,0 +1,9 @@
+.BodyText {
+    width: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    text-indent: 50px;
+    background-color: #fec123;
+    padding: 3%;
+}
