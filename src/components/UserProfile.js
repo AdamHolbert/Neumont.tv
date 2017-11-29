@@ -18,7 +18,8 @@ class UserProfile extends Component {
         return (
             <div className='UserProfileContainer'>
                 <img className='ProfilePicture'
-                    src={this.state.profilePictureUrl}/>
+                    src={this.state.profilePictureUrl}
+                alt='Profile'/>
 
                 <div className='UserLinks'>
                     <div className='UserUploads'>
@@ -28,7 +29,25 @@ class UserProfile extends Component {
                         Liked Videos
                     </div>
                     <div className='UserPlaylists'>
-                        Playlists
+                        User Uploads:
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                    <div className='UserLikedVids'>
+                        Liked Videos:
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                    <div className='UserPlaylists'>
+                        Playlist:
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                     </div>
                 </div>
             </div>

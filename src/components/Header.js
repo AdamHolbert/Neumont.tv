@@ -11,7 +11,8 @@ class Header extends Component {
     const userId = localStorage.getItem(GC_USER_ID)
     return (
       <div className='header'>
-        <img src={logoPicture} className='headerLogo'/>
+        <img src={logoPicture} className='headerLogo'
+        alt='Neumont Tv Logo'/>
         <div className='headerBar'>
           <div className='headerTop'>
             <Link to='/'>Home</Link>
