@@ -29,6 +29,7 @@
 
 .Ads {
   float: right;
+  opacity: 0.5;
 }
 
 .pageContents {
@@ -39,7 +40,12 @@
   top: 120px;
   display: flex;
   flex-direction: row;
-  background-color: darkred;
+  background: repeating-linear-gradient(
+          -55deg,
+          #222,
+          #222 15px,
+          #333 99px
+  );
   width: 100%;
 }
 
