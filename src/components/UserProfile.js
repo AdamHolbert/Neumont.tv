@@ -22,13 +22,25 @@ class UserProfile extends Component {
 
                 <div className='UserLinks'>
                     <div className='UserUploads'>
-                        This will be a link
+                        User Uploads:
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                     </div>
                     <div className='UserLikedVids'>
-                        This will be liked vids
+                        Liked Videos:
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                     </div>
                     <div className='UserPlaylists'>
-                        This will go to playlists
+                        Playerlist:
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                     </div>
                 </div>
             </div>

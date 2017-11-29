@@ -1,17 +1,27 @@
 .UserProfileContainer {
-    background: cadetblue;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     opacity: 0.5;
 }
 
 
 .ProfilePicture {
-    height: 100%;
+    height: 25%;
     width: 100%;
     border-radius: 50%;
+    background-color: #fec123;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.UserLinks {
+    margin-top: 9.5%;
+    font-size: 140%;
+    color: #fec123;
+    font-weight: bold;
+    text-align: center;
 }
 
