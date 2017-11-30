@@ -2,19 +2,26 @@ html {
     background-color: #000;
 }
 .UserProfileContainer {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    opacity: 0.5;
+    justify-content: space-evenly;
+
 }
 
+.UserName {
+    font-size: 200%;
+    color: #fec123;
+    font-style: italic;
+    text-align: center;
+}
 
 .ProfilePicture {
-    height: 25%;
-    width: 100%;
+    width: 120px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 50%;
+    border: solid #201F1D thin;
     background-color: #fec123;
     margin-bottom: 0px;
     padding-bottom: 0px;
@@ -22,9 +29,11 @@ html {
 
 .UserLinks {
     margin-top: 9.5%;
-    font-size: 140%;
+    font-size: 120%;
     color: #fec123;
     font-weight: bold;
     text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
-
