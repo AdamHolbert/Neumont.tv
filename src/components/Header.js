@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import {withRouter} from 'react-router'
 import {GC_USER_ID, GC_AUTH_TOKEN} from '../constants'
 import logoPicture from '../Logo.png'
+import '../styles/newUser.css'
 
 class Header extends Component {
     

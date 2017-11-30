@@ -25,7 +25,6 @@ class App extends Component {
   hideDisclaimer(){
     this.setState({ hideDisclaimer: true });
   }
-  
   render() {
     if(!this.state.hideDisclaimer){
       return(
