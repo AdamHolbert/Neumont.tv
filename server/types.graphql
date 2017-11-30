@@ -6,9 +6,9 @@ type User @model {
   createdAt: DateTime! # read-only (managed by Graphcool)
   updatedAt: DateTime! # read-only (managed by Graphcool)
 
-  name: String
-  email: String @isUnique
-  password: String
+  name: String!
+  email: String! @isUnique
+  password: String!
 
   posts: [Post!]! @relation(name: "UserPosts")
 }
