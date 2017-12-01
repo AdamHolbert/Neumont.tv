@@ -18,6 +18,7 @@ html {
 .ProfilePicture {
     width: 120px;
     height: 120px;
+    margin-top: 6%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
