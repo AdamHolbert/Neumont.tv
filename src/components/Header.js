@@ -7,7 +7,9 @@ import logoPicture from '../Logo.png'
 import '../styles/newUser.css'
 
 class Header extends Component {
-    
+    state = {
+        profilePictureUrl: 'https://s3-ap-southeast-2.amazonaws.com/adme-hyundai/wp-content/uploads/2017/05/18144805/wallpaper-for-facebook-profile-photo.jpg',
+    };
     render() {
         const userId = localStorage.getItem(GC_USER_ID)
         return (
@@ -30,6 +32,7 @@ class Header extends Component {
                             }}>logout</div>
                             :
                             <Link to='/login' className='navLinks'>LOGIN</Link>
+                            
                         }
                     </div>
                     <div className='headerBotton'>
