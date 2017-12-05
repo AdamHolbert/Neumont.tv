@@ -29,7 +29,7 @@ html {
     opacity: 1;
     width: 100%;
     left: 30px;
-    margin-top: 2.3%;
+    margin-top: 2.0%;
     margin-left: -3%;
     z-index: 1;
 }
@@ -53,6 +53,21 @@ html {
     padding: 0.5%;
     width: 30%;
 }
+
+.loginButton {
+    color: rgba(255,255,255,  1);
+    padding: 0%;
+    margin-top: 1.7%;
+    text-decoration: underline;
+    width:6%;
+
+}
+
+.dashes {
+    color:black;
+    margin:0px;
+    padding: 0px;
+}
 .App-title {
   font-size: 1.5em;
 }
@@ -69,6 +84,16 @@ html {
 .Ads {
   float: right;
     padding-bottom: 55%;
+}
+.ProfilePictureHeader {
+    width: 45px;
+    height: 44px;
+    border-radius: 50%;
+    border: solid #201F1D thin;
+    background-color: #fec123;
+    margin-bottom: 0.2%;
+    margin-top:0.2%;
+    padding-bottom: 0px;
 }
 
 .pageContents {

@@ -31,9 +31,11 @@ class Header extends Component {
                                 this.props.history.push(`/`)
                             }}>logout</div>
                             :
-                            <Link to='/login' className='navLinks'>LOGIN</Link>
-                            
+                            <Link to='/login' className='loginButton'>LOGIN</Link>
                         }
+                        <img className='ProfilePictureHeader'
+                             src={this.state.profilePictureUrl}
+                             alt='Profile'/>
                     </div>
                     <div className='headerBotton'>
                         <Search/>
