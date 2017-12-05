@@ -19,7 +19,7 @@ class Homepage extends Component {
                         type='text'
                         placeholder='Create A Search Here'
                     />
-                    <div className='searchButton'><button type="button">Search</button></div>
+                    <div className='searchButton'>SEARCH</div>
                 </div>
             </div>
 
