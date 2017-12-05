@@ -17,6 +17,7 @@ class UserProfile extends Component {
     render() {
 
         return (
+            <div className='overlay'>
             <div className='UserProfileContainer'>
 
                 <img className='ProfilePicture'
@@ -37,6 +38,7 @@ class UserProfile extends Component {
                     </div>
                     <div className='UserPlaylists'>
                         <Link to='/' className='UserLinks'>Playlists</Link>
+                    </div>
                     </div>
                 </div>
             </div>

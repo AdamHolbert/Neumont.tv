@@ -38,3 +38,19 @@ html {
     justify-content: space-evenly;
     flex-direction: column;
 }
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    background-color: #201F1D;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .2s ease;
+}
+html:hover .overlay {
+    width: 12.1%;
+    right: 0;
+}
