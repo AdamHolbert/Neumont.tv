@@ -69,6 +69,10 @@
     display: flex;
     flex-direction: column;
 }
+.loginOrSignUpButton {
+    border: 1px #000 solid;
+    border-radius: 25px;
+}
 
 .loginButton{
     font-size: large;

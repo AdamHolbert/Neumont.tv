@@ -66,7 +66,7 @@ class Login extends Component {
                         }
                         <div className="loginSection forgotPassword">
                             <button
-                                className="loginButton"
+                                className="loginOrSignUpButton"
                                 onClick={() => this._confirm()}
                             >
                                 {this.state.login ? 'Login' : 'Create an account'}

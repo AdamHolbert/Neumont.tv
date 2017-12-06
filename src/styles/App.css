@@ -69,6 +69,16 @@ html {
     color:#fec123;
 }
 
+.logOutButton {
+    color: rgba(255,255,255,  1);
+    padding: 0%;
+    margin-top: 1.7%;
+    text-decoration: underline;
+    width:8%;
+}
+.logOutButton:hover {
+    color: #fec123;
+}
 .dashes {
     color:black;
     margin:0px;

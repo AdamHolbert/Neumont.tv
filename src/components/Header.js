@@ -25,11 +25,11 @@ class Header extends Component {
                         <Link to='/contact' className='navLinks'>CONTACT US</Link>
 
                         {userId ?
-                            <div onClick={() => {
+                            <div className='logOutButton' onClick={() => {
                                 localStorage.removeItem(GC_USER_ID);
                                 localStorage.removeItem(GC_AUTH_TOKEN);
                                 this.props.history.push(`/`)
-                            }}>logout</div>
+                            }}>LOGOUT</div>
                             :
                             <Link to='/login' className='loginButton'>LOGIN</Link>
                         }
