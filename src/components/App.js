@@ -48,7 +48,7 @@ class App extends Component {
                 <Route exact path='/login' component={Login}/>
                 <Route exact path='/ads' component={Ads}/>
                 <Route exact path='/video/settings' component={VideoSettings}/>
-                  <Route exact path='/create' component={Login}/>
+                  <Route exact path='/newUser' component={Login}/>
 
                 <Route exact path='/' component={Homepage}/>
               </Switch>

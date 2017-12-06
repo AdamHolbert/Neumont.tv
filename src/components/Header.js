@@ -41,7 +41,7 @@ class Header extends Component {
                     </div>
                     <div className='headerBotton'>
                         <Search/>
-                        {!userId && <Link to='/create' className='newUserButton'>NEW USER</Link>}
+                        {!userId && <Link to='/newUser' className='newUserButton'>NEW USER</Link>}
                     </div>
 
                 
