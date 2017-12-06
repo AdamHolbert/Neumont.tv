@@ -50,6 +50,7 @@ html {
     height: 100%;
     transition: .2s ease;
 }
+
 html:hover .overlay {
     width: 12.1%;
     right: 0;

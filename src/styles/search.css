@@ -5,7 +5,6 @@ html {
 .search {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
     width:25%;
     padding-top: 0.2%;
     padding-bottom: 0.2%;
@@ -37,4 +36,7 @@ html {
     text-decoration: none;
     color: rgba(255,255,255,  1);
     width: 25%;
+}
+.searchButton:hover {
+    color:#fec123;
 }

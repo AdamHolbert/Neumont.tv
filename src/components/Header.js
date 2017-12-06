@@ -33,9 +33,11 @@ class Header extends Component {
                             :
                             <Link to='/login' className='loginButton'>LOGIN</Link>
                         }
+                        <div className='settingsOverlay'>
                         <img className='ProfilePictureHeader'
                              src={this.state.profilePictureUrl}
                              alt='Profile'/>
+                        </div>
                     </div>
                     <div className='headerBotton'>
                         <Search/>
