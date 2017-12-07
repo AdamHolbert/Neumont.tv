@@ -62,12 +62,11 @@ class App extends Component {
                                 <Route exact path='/' component={Homepage}/>
                             </Switch>
                         </div>
-
-                        <div className='Ads'>
-                            <Ads/>
-                        </div>
                     </div>
-                </div>
+                    <div className='Ads'>
+                            <Ads/>
+                    </div>
+                    </div>
             )
         }
     }
