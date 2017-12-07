@@ -1,10 +1,11 @@
 
 .UserProfileContainer {
     display: flex;
+    background-color:black;
     flex-direction: column;
     justify-content: space-evenly;
     padding-bottom: 300%;
-    background-color: black;
+
 }
 
 .UserName {

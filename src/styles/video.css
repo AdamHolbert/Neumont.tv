@@ -1,13 +1,7 @@
-
-/*html {*/
-    /*background: linear-gradient(black, black); !* Standard syntax (must be last) *!*/
-    /*background-position: center;*/
-    /*background-repeat: round;*/
-    /*background-size: cover;*/
-/*}*/
 .homeComponent {
     margin-top: 1%;
     padding-top: 1%;
+    padding-bottom:1%;
     margin-bottom: 1.5%;
     align-content: center;
     border-top-right-radius: 20px;

@@ -92,7 +92,15 @@ html {
 
 .Ads {
   float: right;
+    margin-top: 8%;
+    width:11.3%;
     padding-bottom: 55%;
+}
+
+.AdHolder {
+    background-color: blue;
+    padding-right: 10%;
+    width:500px;
 }
 .ProfilePictureHeader {
     width: 45px;
@@ -128,9 +136,6 @@ html {
   height: 100%;
 }
 
-.Ads {
-  width: 11.3%;
-}
 .overlayContainer {
     position: absolute;
     bottom: 0;
@@ -140,7 +145,7 @@ html {
     overflow: hidden;
     width: 0;
     height: 100%;
-    transition: 1.0s ease;
+    transition: 1.4s ease;
 
 
 }
@@ -172,4 +177,3 @@ html {
     width: 65%;
     left:15%;
 }
-
