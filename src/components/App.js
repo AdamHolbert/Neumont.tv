@@ -14,6 +14,7 @@ import VideoSettings from "./VideoSettings";
 import MoreInfo from "./MoreInfo";
 import Settings from "./Settings";
 
+
 class App extends Component {
 
     constructor(props) {

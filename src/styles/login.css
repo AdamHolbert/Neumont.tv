@@ -77,6 +77,25 @@
 .loginButton{
     font-size: large;
 }
+.hidden {
+    font-size:0px;
+}
+.showingLoad {
+    color:#fec123;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px white;
+    padding:0.5%;
+    margin-left:13%;
+    font-size:25px;
+    justify-content: center;
+
+}
+
+.loadingMessage {
+    color:black;
+    margin-left:25%;
+    font-size:125%;
+    margin-bottom: 1%;
+}
 
 .forgotPassword {
     display: flex;

@@ -6,7 +6,7 @@ class Settings extends Component {
 
     render() {
         return (
-            <div>
+            <div className='sets'>
                 This is the settings page for the user.
 
             </div>

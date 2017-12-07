@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom'
 import {graphql, compose} from 'react-apollo'
 import gql from 'graphql-tag'
 import '../styles/login.css'
+import UserSettings from "./UserSettings";
 
 class Login extends Component {
 
@@ -11,8 +12,10 @@ class Login extends Component {
         super();
         this.state = {
             login: !(props.location.pathname === '/newUser'), // switch between Login and SignUp
+            loadMessage:false,
             email: '',
             password: '',
+            showing:true,
             name: ''
         }
     }
@@ -20,15 +23,24 @@ class Login extends Component {
     componentWillReceiveProps(nextProps) {
         if(this.state.login === true && nextProps.location.pathname === '/newUser'){
             this.setState({login: false})
+            this.setState({loadMessage:true})
         }
         if(!this.state.login === true && nextProps.location.pathname === '/login'){
             this.setState({login: true})
+            this.setState({loadMessage:false})
         }
     }
-    
+
     render() {
+        var load;
+        if (this.state.showing){
+            load += ' hidden'
+        } else {
+            load += ' showingLoad'
+        }
         return (
             <div className='componentHolder'>
+                <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
                 <div className="loginComponent">
                     <div className="loginTop">
                         <div className={this.state.login ? 'loginSelected' : 'loginUnselected RBorder'}
@@ -75,20 +87,32 @@ class Login extends Component {
                             />
                         </div>
                         }
+                        <div className={load}>
+                            LOADING...
+                        </div>
+
                         <div className="loginSection forgotPassword">
+                            <div onClick={this._showing}>
                             <button
+                                id={"button"}
                                 className="loginOrSignUpButton"
-                                onClick={() => this._confirm()}
+                                onClick={() => this._confirm()
+                                }
                             >
                                 {this.state.login ? 'Login' : 'Create an account'}
+
                             </button>
+                            </div>
                             {this.state.login &&
                             <a href="http://lmgtfy.com/?q=What+is+my+password%3F" className="loginSection">Forgot your
                                 password?</a>
                             }
                         </div>
+
+
                     </div>
                 </div>
+
             </div>
         )
     }
@@ -100,13 +124,14 @@ class Login extends Component {
             const result = await this.props.authenticateUserMutation({
                 variables: {
                     email,
-                    password
+                    password,
                 }
             })
             const {id, token} = result.data.authenticateUser
             this._saveUserData(id, token)
             this.props.history.replace('/')
-            
+
+
         } else {
             //Sign up
             try {
@@ -133,6 +158,15 @@ class Login extends Component {
     _saveUserData = (id, token) => {
         localStorage.setItem(GC_USER_ID, id)
         localStorage.setItem(GC_AUTH_TOKEN, token)
+    }
+
+    _showing  = async () => {
+        if (this.state.showing){
+            this.setState({showing: !this.state.showing})
+        } else {
+            this.setState({showing: this.state.showing})
+        }
+
     }
     
 }
