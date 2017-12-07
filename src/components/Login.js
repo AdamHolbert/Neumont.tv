@@ -12,7 +12,7 @@ class Login extends Component {
         super();
         this.state = {
             login: !(props.location.pathname === '/newUser'), // switch between Login and SignUp
-            loadMessage:false,
+            validLogin:false,
             email: '',
             password: '',
             showing:true,
@@ -32,12 +32,21 @@ class Login extends Component {
     }
 
     render() {
+        const userId = localStorage.getItem(GC_USER_ID)
         var load;
+
+        if(this.state.showing) {
+
+        }
+
         if (this.state.showing){
             load += ' hidden'
         } else {
             load += ' showingLoad'
         }
+
+
+
         return (
             <div className='componentHolder'>
                 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -52,9 +61,9 @@ class Login extends Component {
                         >Sign up
                         </div>
                     </div>
-                    
+
                     <div className="loginArea">
-                        
+
                         <div className="loginSection">
                             Email :
                             <input
@@ -63,6 +72,7 @@ class Login extends Component {
                                 onChange={(e) => this.setState({email: e.target.value})}
                                 type='text'
                                 placeholder='Your email address'
+
                             />
                         </div>
                         <div className="loginSection">
@@ -87,8 +97,9 @@ class Login extends Component {
                             />
                         </div>
                         }
+
                         <div className={load}>
-                            LOADING...
+                            {!this.state.validLogin === false? 'LOADING...' : 'INVALID USERNAME/PASSWORD...'}
                         </div>
 
                         <div className="loginSection forgotPassword">
@@ -116,7 +127,7 @@ class Login extends Component {
             </div>
         )
     }
-    
+
     _confirm = async () => {
         const {email, password, name, login} = this.state;
         if (login) {
@@ -131,7 +142,6 @@ class Login extends Component {
             this._saveUserData(id, token)
             this.props.history.replace('/')
 
-
         } else {
             //Sign up
             try {
@@ -143,32 +153,41 @@ class Login extends Component {
                         }
                     })
                     .catch((error) => {
-                    
+
                     });
                 const {id, token} = result.data.signupUser;
                 this._saveUserData(id, token);
+
                 this.props.history.replace('/')
+
             } catch (e) {
                 console.log("error in sign up: ");
                 console.log(e);
             }
         }
     };
-    
+
     _saveUserData = (id, token) => {
         localStorage.setItem(GC_USER_ID, id)
         localStorage.setItem(GC_AUTH_TOKEN, token)
     }
 
     _showing  = async () => {
+
+        if(!this.state.email && !this.state.password) {
+            this.setState({validLogin: false})
+        } else {
+            this.setState({validLogin: true})
+        }
+
+
         if (this.state.showing){
             this.setState({showing: !this.state.showing})
         } else {
             this.setState({showing: this.state.showing})
         }
-
     }
-    
+
 }
 
 const SIGNUP_USER_MUTATION = gql`
