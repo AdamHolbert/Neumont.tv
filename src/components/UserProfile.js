@@ -4,6 +4,7 @@ import {graphql} from 'react-apollo'
 import gql from 'graphql-tag'
 import '../styles/userProfile.css'
 import {GC_USER_ID} from '../constants'
+import UserSettings from "./UserSettings";
 
 
 
@@ -18,35 +19,74 @@ class UserProfile extends Component {
         name: ''
     }
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            login: true, // switch between Login and SignUp
+            username: 'TestUser',
+            password: '',
+            profilePictureUrl: 'https://s3-ap-southeast-2.amazonaws.com/adme-hyundai/wp-content/uploads/2017/05/18144805/wallpaper-for-facebook-profile-photo.jpg',
+            name: '',
+            showing: true
+        }
+
+        this._showing = this._showing.bind(this)
+
+
+
+    }
+
+    _showing(){
+        console.log(this.state.showing)
+        this.setState({showing: !this.state.showing})
+    }
+
     render() {
 
+
+        var style;
+        if (this.state.showing){
+            style += ' showing'
+        } else {
+            style += ' hidden'
+        }
+
         return (
-            <div className='overlay'>
-            <div className='UserProfileContainer'>
-
-                <img className='ProfilePicture'
-                    src={this.state.profilePictureUrl}
-                alt='Profile'/>
-
-                <div className='UserName'>
-                    Hello {CurrentUserNameWithData}
+            <div id= 'cube' className='UserProfileContainer'>
+                <div onClick={this._showing} className='flexContainer'>
+                    <div>
+                        {!this.state.showing && <div id='plus' className='buttonPlus'>+</div>}
+                    </div>
+                    <div>
+                        {this.state.showing && <div id='minus' className='buttonMinus'>-</div>}
+                    </div>
                 </div>
+                <div className={style}>
 
-                <div className='UserLinks'>
+                    <img className='ProfilePicture'
+                        src={this.state.profilePictureUrl}
+                    alt='Profile'/>
 
-                    <div className='UserUploads'>
-                        <Link to='/' className='UserLinks'>Uploads</Link>
+                    <div className='UserName'>
+                        Hello {CurrentUserNameWithData}
                     </div>
-                    <div className='UserLikedVids'>
-                        <Link to='/' className='UserLinks'>Liked Videos</Link>
-                    </div>
-                    <div className='UserPlaylists'>
-                        <Link to='/' className='UserLinks'>Playlists</Link>
-                    </div>
+
+                    <div className='UserLinks'>
+
+                        <div className='UserUploads'>
+                            <Link to='/' className='UserLinks'>Uploads</Link>
+                        </div>
+                        <div className='UserLikedVids'>
+                            <Link to='/' className='UserLinks'>Liked Videos</Link>
+                        </div>
+                        <div className='UserPlaylists'>
+                            <Link to='/' className='UserLinks'>Playlists</Link>
+                        </div>
+
+                        <UserSettings/>
                     </div>
                 </div>
             </div>
-
         )
     }
 }

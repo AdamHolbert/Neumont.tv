@@ -1,12 +1,12 @@
-.App {
-  text-align: center;
-}
-
 html {
     background-image: linear-gradient(
-            80deg, black, #201F1D, #201F1D, black, black
+            left, black, #201F1D, #333, #201F1D, black
     );
     height:100%;
+}
+
+.App {
+  text-align: center;
 }
 
 .header {
@@ -29,7 +29,7 @@ html {
     opacity: 1;
     width: 100%;
     left: 30px;
-    margin-top: 1.8%;
+    margin-top: 1.96%;
     margin-left: -3%;
     z-index: 1;
 }
@@ -50,7 +50,11 @@ html {
 .navLinks {
     text-decoration: none;
     color: rgba(255,255,255,  1);
-    padding: 0.5%;
+    padding-left:0.5%;
+    padding-right:0.5%;
+    padding-top:1%;
+    padding-bottom: 0.5%;
+
     width: 30%;
 }
 
@@ -58,25 +62,14 @@ html {
     color:#fec123;
 }
 
-.loginButton {
+.logButton {
+    text-decoration: none;
     color: rgba(255,255,255,  1);
     padding: 0%;
-    margin-top: 1.7%;
-    text-decoration: underline;
-    width:6%;
-}
-.loginButton:hover {
-    color:#fec123;
-}
-
-.logOutButton {
-    color: rgba(255,255,255,  1);
-    padding: 0%;
-    margin-top: 1.7%;
-    text-decoration: underline;
+    margin-top: 1%;
     width:8%;
 }
-.logOutButton:hover {
+.logButton:hover {
     color: #fec123;
 }
 .dashes {
@@ -121,9 +114,6 @@ html {
   display: flex;
   flex-direction: row;
 
- background-image: linear-gradient(
- 70deg, black, #201F1D, #201F1D, black, black
- );
   width: 100%;
 }
 
@@ -141,5 +131,45 @@ html {
 .Ads {
   width: 11.3%;
 }
+.overlayContainer {
+    position: absolute;
+    bottom: 0;
+    left: 90%;
+    right: 99%;
+    background-color: #201F1D;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: 1.0s ease;
 
+
+}
+
+.ContactContainer {
+    color:white;
+    display:flex;
+    margin-top:20%;
+    background-color: #201F1D;
+    font-size:25px;
+    width:100%;
+    padding-top:1.4%;
+    padding-bottom:1.4%;
+    padding-left: 10%;
+    margin-left:0;
+    text-align: center;
+    opacity: 0.8;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px #fec123;
+}
+.text {
+
+}
+.nImage {
+    opacity: 1.0;
+}
+
+.pageContentsBottom:hover .overlayContainer {
+    opacity: 0.9;
+    width: 65%;
+    left:15%;
+}
 

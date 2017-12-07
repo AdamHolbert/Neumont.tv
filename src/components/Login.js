@@ -4,20 +4,52 @@ import {withRouter} from 'react-router-dom'
 import {graphql, compose} from 'react-apollo'
 import gql from 'graphql-tag'
 import '../styles/login.css'
+import UserSettings from "./UserSettings";
 
 class Login extends Component {
-    
-    state = {
-        login: true, // switch between Login and SignUp
-        email: '',
-        password: '',
-        name: ''
+
+    constructor(props) {
+        super();
+        this.state = {
+            login: !(props.location.pathname === '/newUser'), // switch between Login and SignUp
+            validLogin:false,
+            email: '',
+            password: '',
+            showing:true,
+            name: ''
+        }
     }
-    
+
+    componentWillReceiveProps(nextProps) {
+        if(this.state.login === true && nextProps.location.pathname === '/newUser'){
+            this.setState({login: false})
+            this.setState({loadMessage:true})
+        }
+        if(!this.state.login === true && nextProps.location.pathname === '/login'){
+            this.setState({login: true})
+            this.setState({loadMessage:false})
+        }
+    }
+
     render() {
-        
+        const userId = localStorage.getItem(GC_USER_ID)
+        var load;
+
+        if(this.state.showing) {
+
+        }
+
+        if (this.state.showing){
+            load += ' hidden'
+        } else {
+            load += ' showingLoad'
+        }
+
+
+
         return (
             <div className='componentHolder'>
+                <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
                 <div className="loginComponent">
                     <div className="loginTop">
                         <div className={this.state.login ? 'loginSelected' : 'loginUnselected RBorder'}
@@ -29,9 +61,9 @@ class Login extends Component {
                         >Sign up
                         </div>
                     </div>
-                    
+
                     <div className="loginArea">
-                        
+
                         <div className="loginSection">
                             Email :
                             <input
@@ -40,6 +72,7 @@ class Login extends Component {
                                 onChange={(e) => this.setState({email: e.target.value})}
                                 type='text'
                                 placeholder='Your email address'
+
                             />
                         </div>
                         <div className="loginSection">
@@ -64,24 +97,37 @@ class Login extends Component {
                             />
                         </div>
                         }
+
+                        <div className={load}>
+                            {!this.state.validLogin === false? 'LOADING...' : 'INVALID USERNAME/PASSWORD...'}
+                        </div>
+
                         <div className="loginSection forgotPassword">
+                            <div onClick={this._showing}>
                             <button
+                                id={"button"}
                                 className="loginOrSignUpButton"
-                                onClick={() => this._confirm()}
+                                onClick={() => this._confirm()
+                                }
                             >
                                 {this.state.login ? 'Login' : 'Create an account'}
+
                             </button>
+                            </div>
                             {this.state.login &&
                             <a href="http://lmgtfy.com/?q=What+is+my+password%3F" className="loginSection">Forgot your
                                 password?</a>
                             }
                         </div>
+
+
                     </div>
                 </div>
+
             </div>
         )
     }
-    
+
     _confirm = async () => {
         const {email, password, name, login} = this.state;
         if (login) {
@@ -89,13 +135,13 @@ class Login extends Component {
             const result = await this.props.authenticateUserMutation({
                 variables: {
                     email,
-                    password
+                    password,
                 }
             })
             const {id, token} = result.data.authenticateUser
             this._saveUserData(id, token)
             this.props.history.replace('/')
-            
+
         } else {
             //Sign up
             try {
@@ -107,23 +153,41 @@ class Login extends Component {
                         }
                     })
                     .catch((error) => {
-                    
+
                     });
                 const {id, token} = result.data.signupUser;
                 this._saveUserData(id, token);
+
                 this.props.history.replace('/')
+
             } catch (e) {
                 console.log("error in sign up: ");
                 console.log(e);
             }
         }
     };
-    
+
     _saveUserData = (id, token) => {
         localStorage.setItem(GC_USER_ID, id)
         localStorage.setItem(GC_AUTH_TOKEN, token)
     }
-    
+
+    _showing  = async () => {
+
+        if(!this.state.email && !this.state.password) {
+            this.setState({validLogin: false})
+        } else {
+            this.setState({validLogin: true})
+        }
+
+
+        if (this.state.showing){
+            this.setState({showing: !this.state.showing})
+        } else {
+            this.setState({showing: this.state.showing})
+        }
+    }
+
 }
 
 const SIGNUP_USER_MUTATION = gql`
