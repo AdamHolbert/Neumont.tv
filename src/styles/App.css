@@ -45,7 +45,6 @@ html {
     border: 2px solid #fec123;
     text-decoration: none ;
     font-size:22px;
-    color:red;
 }
 .navLinks {
     text-decoration: none;
@@ -77,31 +76,13 @@ html {
     margin:0px;
     padding: 0px;
 }
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 .Ads {
-  float: right;
-    margin-top: 8%;
     width:11.3%;
-    padding-bottom: 55%;
+    display: flex;
+    justify-content: center;
 }
 
-.AdHolder {
-    background-color: blue;
-    padding-right: 10%;
-    width:500px;
-}
 .ProfilePictureHeader {
     width: 45px;
     height: 44px;
@@ -121,13 +102,11 @@ html {
   top: 120px;
   display: flex;
   flex-direction: row;
-
   width: 100%;
 }
 
 .UserProfile {
   width: 11.3%;
-  height:auto;
 
 }
 

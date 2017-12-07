@@ -43,29 +43,30 @@ class App extends Component {
                     <div>
                         <Header/>
                     </div>
-                    <div className='pageContentsBottom'>
-                        <div className='UserProfile'>
-                            {userId && <UserProfile/>}
-                        </div>
+                        <div className='pageContentsBottom'>
+                            <div className='UserProfile'>
+                                {userId && <UserProfile/>}
+                            </div>
 
-                        <div className='Content'>
-                            <Switch>
-                                <Route exact path='/Categories' component={Categories}/>
-                                <Route exact path='/moreInfo' component={MoreInfo}/>
-                                <Route exact path='/login' login='false' component={Login}/>
-                                <Route exact path='/newUser' login='true' component={Login}/>
-                                <Route exact path='/ads' component={Ads}/>
-                                <Route exact path='/settings' component={Settings}/>
-                                <Route exact path='/contact' component={ContactUS}/>
-                                <Route exact path='/about' component={AboutUs}/>
-                                <Route exact path='/video/settings' component={VideoSettings}/>
-                                <Route exact path='/' component={Homepage}/>
-                            </Switch>
+                            <div className='Content'>
+                                <Switch>
+                                    <Route exact path='/Categories' component={Categories}/>
+                                    <Route exact path='/moreInfo' component={MoreInfo}/>
+                                    <Route exact path='/login' login='false' component={Login}/>
+                                    <Route exact path='/newUser' login='true' component={Login}/>
+                                    <Route exact path='/ads' component={Ads}/>
+                                    <Route exact path='/settings' component={Settings}/>
+                                    <Route exact path='/contact' component={ContactUS}/>
+                                    <Route exact path='/about' component={AboutUs}/>
+                                    <Route exact path='/video/settings' component={VideoSettings}/>
+                                    <Route exact path='/' component={Homepage}/>
+                                </Switch>
+                            </div>
+
+                            <div className='Ads'>
+                                    <Ads/>
+                            </div>
                         </div>
-                    </div>
-                    <div className='Ads'>
-                            <Ads/>
-                    </div>
                     </div>
             )
         }

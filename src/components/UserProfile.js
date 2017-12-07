@@ -41,7 +41,7 @@ class UserProfile extends Component {
         }
 
         return (
-            <div id= 'cube' className='UserProfileContainer'>
+            <div className='UserProfileContainer'>
                 <div onClick={this._showing} className='flexContainer'>
                     <div>
                         {!this.state.showing && <div id='plus' className='buttonPlus'>+</div>}

@@ -9,8 +9,7 @@ class Ads extends Component {
             <div className='AdHolder'>
                 <AdSense.Google client='ca-pub-7292810486004926'
                                 slot='7806394673'
-                                style={{width: 500, height: 300}}
-                                format='' />
+                                format='vertical' />
             </div>
         )
     }
