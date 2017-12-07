@@ -8,9 +8,9 @@ class ContactUs extends Component {
     render() {
         return (
             <div className='contact'>
-                <Link to='/contact-image'> <div className='nImage'><img src={neumont}/></div></Link>
 
             <div className='overlayContainer'>
+                <Link to='/contact-image'> <div className='nImage'><img src={neumont}/></div></Link>
             <div className='ContactContainer'>
 
                 <div className='text'>
