@@ -1,10 +1,10 @@
 
-html {
-    background: linear-gradient(black, black); /* Standard syntax (must be last) */
-    background-position: center;
-    background-repeat: round;
-    background-size: cover;
-}
+/*html {*/
+    /*background: linear-gradient(black, black); !* Standard syntax (must be last) *!*/
+    /*background-position: center;*/
+    /*background-repeat: round;*/
+    /*background-size: cover;*/
+/*}*/
 .homeComponent {
     margin-top: 1%;
     padding-top: 1%;

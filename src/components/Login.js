@@ -6,16 +6,27 @@ import gql from 'graphql-tag'
 import '../styles/login.css'
 
 class Login extends Component {
-    
-    state = {
-        login: true, // switch between Login and SignUp
-        email: '',
-        password: '',
-        name: ''
+
+    constructor(props) {
+        super();
+        this.state = {
+            login: !(props.location.pathname === '/newUser'), // switch between Login and SignUp
+            email: '',
+            password: '',
+            name: ''
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if(this.state.login === true && nextProps.location.pathname === '/newUser'){
+            this.setState({login: false})
+        }
+        if(!this.state.login === true && nextProps.location.pathname === '/login'){
+            this.setState({login: true})
+        }
     }
     
     render() {
-        
         return (
             <div className='componentHolder'>
                 <div className="loginComponent">

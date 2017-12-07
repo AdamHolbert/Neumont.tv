@@ -5,14 +5,20 @@ import {graphql, compose} from 'react-apollo'
 import gql from 'graphql-tag'
 import '../styles/login.css'
 
-class Create extends Component {
+class Login extends Component {
 
-    state = {
-        login: true, // switch between Login and SignUp
-        email: '',
-        password: '',
-        name: ''
+    constructor(props) {
+        super();
+
+        console.log(props);
+        this.state = {
+            login: false, // switch between Login and SignUp
+            email: '',
+            password: '',
+            name: ''
+        }
     }
+
 
     render() {
 
@@ -85,6 +91,18 @@ class Create extends Component {
     _confirm = async () => {
         const {email, password, name, login} = this.state;
         if (login) {
+            //Login
+            const result = await this.props.authenticateUserMutation({
+                variables: {
+                    email,
+                    password
+                }
+            })
+            const {id, token} = result.data.authenticateUser
+            this._saveUserData(id, token)
+            this.props.history.replace('/')
+
+        } else {
             //Sign up
             try {
                 const result = await this.props.signupUserMutation({
@@ -104,19 +122,6 @@ class Create extends Component {
                 console.log("error in sign up: ");
                 console.log(e);
             }
-
-        } else {
-            //Login
-            const result = await this.props.authenticateUserMutation({
-                variables: {
-                    email,
-                    password
-                }
-            })
-            const {id, token} = result.data.authenticateUser
-            this._saveUserData(id, token)
-            this.props.history.replace('/')
-
         }
     };
 
@@ -155,4 +160,4 @@ export default compose(
 //   name: 'loggedInUserQuery',
 //   options: { fetchPolicy: 'network-only' }
 // })
-)(withRouter(Create))
+)(withRouter(Login))
