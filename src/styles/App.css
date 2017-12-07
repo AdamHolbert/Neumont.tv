@@ -29,7 +29,7 @@ html {
     opacity: 1;
     width: 100%;
     left: 30px;
-    margin-top: 1.8%;
+    margin-top: 1.96%;
     margin-left: -3%;
     z-index: 1;
 }
@@ -50,7 +50,11 @@ html {
 .navLinks {
     text-decoration: none;
     color: rgba(255,255,255,  1);
-    padding: 0.5%;
+    padding-left:0.5%;
+    padding-right:0.5%;
+    padding-top:1%;
+    padding-bottom: 0.5%;
+
     width: 30%;
 }
 
@@ -58,25 +62,16 @@ html {
     color:#fec123;
 }
 
-.loginButton {
-    color: rgba(255,255,255,  1);
-    padding: 0%;
-    margin-top: 1.7%;
-    text-decoration: underline;
-    width:6%;
-}
-.loginButton:hover {
-    color:#fec123;
-}
 
-.logOutButton {
+
+.logButton {
+    text-decoration: none;
     color: rgba(255,255,255,  1);
     padding: 0%;
-    margin-top: 1.7%;
-    text-decoration: underline;
+    margin-top: 1%;
     width:8%;
 }
-.logOutButton:hover {
+.logButton:hover {
     color: #fec123;
 }
 .dashes {

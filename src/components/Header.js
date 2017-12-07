@@ -25,13 +25,13 @@ class Header extends Component {
                         <Link to='/contact' className='navLinks'>CONTACT US</Link>
 
                         {userId ?
-                            <div className='logOutButton' onClick={() => {
+                            <div className='logButton' onClick={() => {
                                 localStorage.removeItem(GC_USER_ID);
                                 localStorage.removeItem(GC_AUTH_TOKEN);
                                 this.props.history.push(`/`)
                             }}>LOGOUT</div>
                             :
-                            <Link to='/login' className='loginButton'>LOGIN</Link>
+                            <Link to='/login' className='logButton'>LOGIN</Link>
                         }
                         <div className='settingsOverlay'>
                         <img className='ProfilePictureHeader'

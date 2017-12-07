@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/userProfile.css'
+import UserSettings from "./UserSettings";
 
 
 
@@ -70,6 +71,8 @@ class UserProfile extends Component {
                         <div className='UserPlaylists'>
                             <Link to='/' className='UserLinks'>Playlists</Link>
                         </div>
+
+                        <UserSettings/>
                     </div>
                 </div>
             </div>

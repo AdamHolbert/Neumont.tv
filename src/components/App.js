@@ -12,6 +12,7 @@ import '../styles/App.css'
 import {HIDE_DISCLAIMER, GC_USER_ID} from '../constants'
 import VideoSettings from "./VideoSettings";
 import MoreInfo from "./MoreInfo";
+import Settings from "./Settings";
 
 class App extends Component {
 
@@ -51,6 +52,7 @@ class App extends Component {
                                 <Route exact path='/login' login='false' component={Login}/>
                                 <Route exact path='/newUser' login='true' component={Login}/>
                                 <Route exact path='/ads' component={Ads}/>
+                                <Route exact path='/settings' component={Settings}/>
                                 <Route exact path='/video/settings' component={VideoSettings}/>
                                 <Route exact path='/' component={Homepage}/>
                             </Switch>

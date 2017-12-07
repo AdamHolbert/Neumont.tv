@@ -37,7 +37,9 @@
     justify-content: space-evenly;
     flex-direction: column;
 }
-
+.UserPlaylists {
+    margin-bottom: 50%;
+}
 .showing {
     position: relative;
     bottom: 0;
