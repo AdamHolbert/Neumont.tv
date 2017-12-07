@@ -17,13 +17,18 @@ class UserProfile extends Component {
             name: '',
             showing: true
         }
+
         this._showing = this._showing.bind(this)
+
+
     }
 
     _showing(){
         console.log(this.state.showing)
         this.setState({showing: !this.state.showing})
     }
+
+
 
     render() {
 
@@ -33,8 +38,6 @@ class UserProfile extends Component {
         } else {
             style += ' hidden'
         }
-
-
 
         return (
             <div id= 'cube' className='UserProfileContainer'>

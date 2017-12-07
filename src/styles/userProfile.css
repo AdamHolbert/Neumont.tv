@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     padding-bottom: 300%;
-    background-color: #201F1D;
+    background-color: black;
 }
 
 .UserName {
@@ -76,9 +76,10 @@
 
 .buttonMinus {
     color:#fec123;
-    background-color: #201F1D;
     padding-top: 0px;
     padding-right:15px;
     font-weight: bold;
     font-size: 55px;
 }
+
+
