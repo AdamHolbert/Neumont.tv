@@ -14,6 +14,7 @@ import VideoSettings from "./VideoSettings";
 import ContactUS from "./ContactUs"
 import MoreInfo from "./MoreInfo";
 import Settings from "./Settings";
+import AboutUs from "./AboutUs";
 
 
 class App extends Component {
@@ -56,7 +57,7 @@ class App extends Component {
                                 <Route exact path='/ads' component={Ads}/>
                                 <Route exact path='/settings' component={Settings}/>
                                 <Route exact path='/contact' component={ContactUS}/>
-
+                                <Route exact path='/about' component={AboutUs}/>
                                 <Route exact path='/video/settings' component={VideoSettings}/>
                                 <Route exact path='/' component={Homepage}/>
                             </Switch>
