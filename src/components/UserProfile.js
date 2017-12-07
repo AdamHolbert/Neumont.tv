@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import {graphql} from 'react-apollo'
+import gql from 'graphql-tag'
 import '../styles/userProfile.css'
+import {GC_USER_ID} from '../constants'
 
 
 
 class UserProfile extends Component {
 
+
     state = {
         login: true, // switch between Login and SignUp
-        username: 'TestUser',
+        username: '',
         password: '',
         profilePictureUrl: 'https://s3-ap-southeast-2.amazonaws.com/adme-hyundai/wp-content/uploads/2017/05/18144805/wallpaper-for-facebook-profile-photo.jpg',
         name: ''
@@ -25,7 +29,7 @@ class UserProfile extends Component {
                 alt='Profile'/>
 
                 <div className='UserName'>
-                    Hello {this.state.username}
+                    Hello {CurrentUserNameWithData}
                 </div>
 
                 <div className='UserLinks'>
@@ -46,5 +50,21 @@ class UserProfile extends Component {
         )
     }
 }
+
+const CurrentUserNameQuery = gql`
+query CurrentUserName($loggedInUserID: ID!) {
+  User (id : $loggedInUserID){
+    name
+  }
+}
+`;
+
+const CurrentUserNameWithData = graphql(CurrentUserNameQuery, {
+    options: {
+        variables: {
+            loggedInUserID: localStorage.getItem(GC_USER_ID)
+        }
+    }
+})(UserProfile)
 
 export default UserProfile
