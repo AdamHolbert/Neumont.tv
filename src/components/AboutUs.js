@@ -10,7 +10,7 @@ class AboutUs extends Component {
             <div className='contact'>
 
                 <div className='overlayContainer'>
-                    <Link to='/contact-image'> <div className='nImage'><img src={neumont}/></div></Link>
+                    <div className='nImage'><img src={neumont}/></div>
                     <div className='ContactContainer'>
 
                         <div className='text'>

@@ -123,13 +123,12 @@ html {
 .ContactContainer {
     color:white;
     display:flex;
-    margin-top:20%;
     background-color: #201F1D;
     font-size:25px;
     width:100%;
     padding-top:1.4%;
     padding-bottom:1.4%;
-    padding-left: 10%;
+    padding-left: 3%;
     margin-left:0;
     text-align: center;
     opacity: 0.8;
@@ -143,7 +142,8 @@ html {
 .nImage {
     opacity: 1.0;
     padding:0px;
-    margin:0px;
+    margin:10px;
+    float: right;
 }
 
 .projectMotive {
@@ -186,9 +186,14 @@ h2 {
     bottom: 0;
     left: 90%;
     right: 99%;
-    background-color: #201F1D;
+    background-color: rgba(32, 31, 29, 0.8);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
     overflow: auto;
     margin:0px;
 
+    display: flex;
+    flex-direction: row;
     height: 100%;
 }
