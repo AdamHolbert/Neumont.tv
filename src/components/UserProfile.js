@@ -45,6 +45,18 @@ class UserProfile extends Component {
         } else {
             style += ' hidden'
         }
+        console.log(this.props)
+
+        var userName;
+
+        if(this.props.data.loading) {
+            userName = 'loading...'
+        } else if (this.props.data.error){
+            userName = 'ERROR'
+        } else {
+            userName = this.props.data.User.name;
+        }
+
 
         return (
             <div className='UserProfileContainer'>
@@ -63,7 +75,7 @@ class UserProfile extends Component {
                     alt='Profile'/>
 
                     <div className='UserName'>
-                        Hello {CurrentUserNameWithData}
+                        Hello {userName}
                     </div>
 
                     <div className='UserLinks'>
@@ -94,12 +106,11 @@ query CurrentUserName($loggedInUserID: ID!) {
 }
 `;
 
-const CurrentUserNameWithData = graphql(CurrentUserNameQuery, {
+
+export default graphql(CurrentUserNameQuery, {
     options: {
         variables: {
             loggedInUserID: localStorage.getItem(GC_USER_ID)
         }
     }
 })(UserProfile)
-
-export default UserProfile
