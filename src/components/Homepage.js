@@ -16,7 +16,6 @@ class Homepage extends Component {
                     <VideoContainer name='HOT TOPICS:'/>
 
                 </div>
-
                 <div className='newVideos'>
                     <VideoContainer name='NEW VIDEOS:'/>
                 </div>
