@@ -31,9 +31,6 @@ class UserProfile extends Component {
         }
 
         this._showing = this._showing.bind(this)
-
-
-
     }
 
     _showing(){
@@ -42,8 +39,6 @@ class UserProfile extends Component {
     }
 
     render() {
-
-
         var style;
         if (this.state.showing){
             style += ' showing'

@@ -11,9 +11,7 @@ class VideoContainer extends Component {
                     <div className='videoContainerName'>{this.props.name}</div>
 
                     <div className='lineBreak'></div>
-
                     <div className='videoContainerVideos'>
-
                         <div className='videoContainerRow'>
                             <VideoThumbnail name='V-1' />
                             <VideoThumbnail name='V-2' />
