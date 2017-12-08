@@ -15,10 +15,10 @@ class VideoContainer extends Component {
         
         return (
             <div>
+                <div className='videoContainerName'>{this.props.name}</div>
+    
                 <div className='videoContainer'>
-                    <div className='videoContainerName'>{this.props.name}</div>
-
-                    <div className='lineBreak'></div>
+                    
                     <div className='videoContainerVideos'>
                         <div className='videoContainerRow'>
                             <iframe width="25%" src={link1} frameborder="0"
