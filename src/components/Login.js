@@ -4,66 +4,68 @@ import {withRouter} from 'react-router-dom'
 import {graphql, compose} from 'react-apollo'
 import gql from 'graphql-tag'
 import '../styles/login.css'
-import UserSettings from "./UserSettings";
 
 class Login extends Component {
-
+    
     constructor(props) {
         super();
         this.state = {
             login: !(props.location.pathname === '/newUser'), // switch between Login and SignUp
-            validLogin:false,
+            loading: false,
+            valid: true,
             email: '',
             password: '',
-            showing:true,
             name: ''
         }
+        this._confirm = this._confirm.bind(this);
     }
-
+    
     componentWillReceiveProps(nextProps) {
-        if(this.state.login === true && nextProps.location.pathname === '/newUser'){
-            this.setState({login: false})
-            this.setState({loadMessage:true})
+        if (this.state.login === true && nextProps.location.pathname === '/newUser') {
+            this.setState({
+                login: false
+            })
+            this.setState({loadMessage: true})
         }
-        if(!this.state.login === true && nextProps.location.pathname === '/login'){
-            this.setState({login: true})
-            this.setState({loadMessage:false})
+        if (!this.state.login === true && nextProps.location.pathname === '/login') {
+            this.setState({
+                login: true
+            })
         }
     }
-
+    
     render() {
-        const userId = localStorage.getItem(GC_USER_ID)
-        var load;
-
-        if(this.state.showing) {
-
-        }
-
-        if (this.state.showing){
-            load += ' hidden'
-        } else {
-            load += ' showingLoad'
-        }
-
-
-
         return (
             <div className='componentHolder'>
-                <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
                 <div className="loginComponent">
                     <div className="loginTop">
                         <div className={this.state.login ? 'loginSelected' : 'loginUnselected RBorder'}
-                             onClick={() => this.setState({login: true})}
+                             onClick={() => {
+                                 if(!this.state.login){
+                                     this.setState({
+                                         login: true,
+                                         loading: false,
+                                         valid: true
+                                     })
+                                 }
+                             }}
                         >Login
                         </div>
                         <div className={!this.state.login ? 'loginSelected' : 'loginUnselected LBorder'}
-                             onClick={() => this.setState({login: false})}
+                             onClick={() => {
+                                 if(this.state.login){
+                                     this.setState({
+                                         login: false,
+                                         loading: false,
+                                         valid: true
+                                     })
+                                 }
+                             }}
                         >Sign up
                         </div>
                     </div>
-
+                    
                     <div className="loginArea">
-
                         <div className="loginSection">
                             Email :
                             <input
@@ -72,7 +74,7 @@ class Login extends Component {
                                 onChange={(e) => this.setState({email: e.target.value})}
                                 type='text'
                                 placeholder='Your email address'
-
+                            
                             />
                         </div>
                         <div className="loginSection">
@@ -97,53 +99,79 @@ class Login extends Component {
                             />
                         </div>
                         }
-
-                        <div className={load}>
-
-
-                            {!this.state.validLogin === false? 'LOADING...' : 'INVALID USERNAME/PASSWORD...'}
+                        
+                        <div className='THIS_DIV_IS_FOR_YOU_PRIYA'>
+                            {this.errorMsg(this.state.loading, this.state.valid)}
                         </div>
-
+                        
                         <div className="loginSection forgotPassword">
                             <div onClick={this._showing}>
-                            <button
-                                id={"button"}
-                                className="loginOrSignUpButton"
-                                onClick={() => this._confirm()
-                                }
-                            >
-                                {this.state.login ? 'Login' : 'Create an account'}
-
-                            </button>
+                                <button
+                                    id={"button"}
+                                    className="loginOrSignUpButton"
+                                    onClick={() => this._confirm()
+                                    }
+                                >
+                                    {this.state.login ? 'Login' : 'Create an account'}
+                                
+                                </button>
                             </div>
                             {this.state.login &&
                             <a href="http://lmgtfy.com/?q=What+is+my+password%3F" className="loginSection">Forgot your
                                 password?</a>
                             }
                         </div>
-
-
+                    
+                    
                     </div>
                 </div>
-
+            
             </div>
         )
     }
-
+    
+    errorMsg(loading, valid) {
+        if (loading) {
+            return 'loading...';
+        } else if (!valid) {
+            return 'Invalid email/password';
+        }
+        return ''
+    }
+    
     _confirm = async () => {
         const {email, password, name, login} = this.state;
+        this.setState({loading: true});
         if (login) {
             //Login
+            try {
             const result = await this.props.authenticateUserMutation({
-                variables: {
-                    email,
-                    password,
-                }
-            })
+                    variables: {
+                        email,
+                        password,
+                    }
+                })
+                .then(() => {
+                    this.setState({
+                        loading: false
+                    })
+                })
+                .catch((error) => {
+                    this.setState({
+                        loading: false,
+                        valid: false
+                    })
+                })
             const {id, token} = result.data.authenticateUser
             this._saveUserData(id, token)
             this.props.history.replace('/')
-
+    
+            } catch (e) {
+                this.setState({
+                    loading: false,
+                    valid: false
+                })
+            }
         } else {
             //Sign up
             try {
@@ -154,42 +182,35 @@ class Login extends Component {
                             name
                         }
                     })
-                    .catch((error) => {
-
-                    });
+                    .then(() => {
+                        this.setState({
+                            loading: false
+                        })
+                    })
+                    .catch(() => {
+                        this.setState({
+                            loading: false,
+                            valid: false
+                        })
+                    })
                 const {id, token} = result.data.signupUser;
                 this._saveUserData(id, token);
-
+                
                 this.props.history.replace('/')
-
+                
             } catch (e) {
-                console.log("error in sign up: ");
-                console.log(e);
+                this.setState({
+                    loading: false,
+                    valid: false
+                })
             }
         }
     };
-
+    
     _saveUserData = (id, token) => {
         localStorage.setItem(GC_USER_ID, id)
         localStorage.setItem(GC_AUTH_TOKEN, token)
     }
-
-    _showing  = async () => {
-
-        if(!this.state.email && !this.state.password) {
-            this.setState({validLogin: false})
-        } else {
-            this.setState({validLogin: true})
-        }
-
-
-        if (this.state.showing){
-            this.setState({showing: !this.state.showing})
-        } else {
-            this.setState({showing: this.state.showing})
-        }
-    }
-
 }
 
 const SIGNUP_USER_MUTATION = gql`
