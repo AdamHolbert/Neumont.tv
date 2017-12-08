@@ -120,21 +120,6 @@ html {
   height: 100%;
 }
 
-.overlayContainer {
-    position: absolute;
-    bottom: 0;
-    left: 90%;
-    right: 99%;
-    background-color: #201F1D;
-    overflow: hidden;
-    margin:0px;
-    width: 0;
-    height: 100%;
-    transition: 1.4s ease;
-
-
-}
-
 .ContactContainer {
     color:white;
     display:flex;
