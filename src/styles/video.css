@@ -10,18 +10,18 @@
 .hotTopics {
     margin: 1%;
     margin-bottom: 2.5%;
-    background-color: #fec123;
+    background-color: white;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    border: 2px solid white;
+    border: 3px solid #fec123;
 }
 
 .newVideos {
     margin: 1%;
-    background-color: #fec123;
+    background-color: white;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    border: 2px solid white;
+    border: 3px solid #fec123;
 }
 .videoContainerName {
     font-size: 250%;

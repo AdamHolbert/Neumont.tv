@@ -45,6 +45,7 @@ html {
     border: 2px solid #fec123;
     text-decoration: none ;
     font-size:22px;
+    color:red;
 }
 .navLinks {
     text-decoration: none;
@@ -79,10 +80,13 @@ html {
 
 .Ads {
     width:11.3%;
-    display: flex;
-    justify-content: center;
+    background-color:black;
+    padding-right: 1%;
+    padding-top: 1.5%;
 }
 
+.AdHolder {
+}
 .ProfilePictureHeader {
     width: 45px;
     height: 44px;
@@ -107,6 +111,7 @@ html {
 
 .UserProfile {
   width: 11.3%;
+  height:auto;
 
 }
 
@@ -122,6 +127,7 @@ html {
     right: 99%;
     background-color: #201F1D;
     overflow: hidden;
+    margin:0px;
     width: 0;
     height: 100%;
     transition: 1.4s ease;
@@ -145,14 +151,28 @@ html {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px #fec123;
 }
 .text {
-
+    text-align: left;
+    justify-content: space-between;
+    padding-bottom: 10%;
 }
 .nImage {
     opacity: 1.0;
+    padding:0px;
+    margin:0px;
+}
+
+.projectMotive {
+    text-align: left;
+    justify-content: space-around;
 }
 
 .pageContentsBottom:hover .overlayContainer {
     opacity: 0.9;
     width: 65%;
     left:15%;
+}
+.LearnMore {
+    font-weight: bold;
+    padding:2%;
+    float:right;
 }

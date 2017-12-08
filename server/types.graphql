@@ -36,8 +36,10 @@ type Video @model {
   createdAt: DateTime! # read-only (managed by Graphcool)
   updatedAt: DateTime! # read-only (managed by Graphcool)
 
-  owner: User!  @relation(name: "Videos")
-  title: String! 
+  owner: User!  @relation(name: "Videos") 
+  title: String!
+  src: String!
+  thumbnailURL: String!
 
 }
 

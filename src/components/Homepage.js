@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { GC_USER_ID } from '../constants'
 import VideoContainer from './VideoContainer'
+import VideoPlayer from "./VideoPlayer";
 
 
 class Homepage extends Component {
@@ -13,8 +14,8 @@ class Homepage extends Component {
                 <div className='homeComponent'>
                     <div className='hotTopics'>
                     <VideoContainer name='HOT TOPICS:'/>
-                </div>
 
+                </div>
                 <div className='newVideos'>
                     <VideoContainer name='NEW VIDEOS:'/>
                 </div>
