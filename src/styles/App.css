@@ -45,6 +45,7 @@ html {
     border: 2px solid #fec123;
     text-decoration: none ;
     font-size:22px;
+    color:red;
 }
 .navLinks {
     text-decoration: none;
@@ -79,10 +80,13 @@ html {
 
 .Ads {
     width:11.3%;
-    display: flex;
-    justify-content: center;
+    background-color:black;
+    padding-right: 1%;
+    padding-top: 1.5%;
 }
 
+.AdHolder {
+}
 .ProfilePictureHeader {
     width: 45px;
     height: 44px;
@@ -107,6 +111,7 @@ html {
 
 .UserProfile {
   width: 11.3%;
+  height:auto;
 
 }
 

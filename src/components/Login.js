@@ -99,6 +99,8 @@ class Login extends Component {
                         }
 
                         <div className={load}>
+
+
                             {!this.state.validLogin === false? 'LOADING...' : 'INVALID USERNAME/PASSWORD...'}
                         </div>
 
