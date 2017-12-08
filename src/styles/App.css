@@ -176,3 +176,24 @@ html {
     padding:2%;
     float:right;
 }
+.hotTopics {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1%;
+    padding: 1%;
+    display: flex;
+}
+
+h2 {
+    padding-left:3%;
+    color:white;
+    text-align: center;
+}
+
+.newVideos {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1%;
+    padding: 1%;
+    display: flex;
+}
