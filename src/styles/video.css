@@ -7,21 +7,14 @@
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
 }
-.hotTopics {
+.videoContainer{
+
     margin: 1%;
     margin-bottom: 2.5%;
-    background-color: white;
+    background-color: #fec123;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    border: 3px solid #fec123;
-}
-
-.newVideos {
-    margin: 1%;
-    background-color: white;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border: 3px solid #fec123;
+    border: 3px solid white;
 }
 .videoContainerName {
     font-size: 250%;

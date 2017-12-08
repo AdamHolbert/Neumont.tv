@@ -5,26 +5,30 @@ import VideoThumbnail from './VideoThumbnail'
 class VideoContainer extends Component {
 
     render() {
+    
+        const link1 = 'https://www.youtube.com/embed/' + this.props.link1;
+        const link2 = 'https://www.youtube.com/embed/' + this.props.link2;
+        const link3 = 'https://www.youtube.com/embed/' + this.props.link3;
+        const link4 = 'https://www.youtube.com/embed/' + this.props.link4;
+        
+        
+        
         return (
             <div>
-                <div className='vidContainer'>
+                <div className='videoContainer'>
                     <div className='videoContainerName'>{this.props.name}</div>
 
                     <div className='lineBreak'></div>
                     <div className='videoContainerVideos'>
                         <div className='videoContainerRow'>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/CZCEgZW9ino" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/9ljOA6Z124k" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/nT2zTMx5hZQ" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/CZCEgZW9ino" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-                        </div>
-                        <div className='videoContainerRow'>
-
-                        </div>
-                        <div className='videoContainerRow'>
-
-                        </div>
-                        <div className='videoContainerRow'>
+                            <iframe width="25%" src={link1} frameborder="0"
+                                    gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                            <iframe width="25%" src={link2} frameborder="0"
+                                    gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                            <iframe width="25%" src={link3} frameborder="0"
+                                    gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                            <iframe width="25%" src={link4} frameborder="0"
+                                    gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
                         </div>
                     </div>
