@@ -1,0 +1,42 @@
+
+.uploadContainer {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+    background-color: #434142;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.uploadSection {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 5px;
+    background-color: #555;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.errorSection {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    color: red;
+}
+
+.uploadTextBox {
+    width: 100%;
+    font-size: larger;
+    border: 1px solid black;
+}
+
+.CONTENT1 {
+    width: 20%;
+}
+.CONTENT2 {
+    width: 78%;
+}

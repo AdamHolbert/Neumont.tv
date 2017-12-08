@@ -4,7 +4,7 @@ import Header from './Header'
 import Login from './Login'
 import Categories from "./Categories";
 import Homepage from './Homepage'
-import Create from './Create'
+import Upload from './Upload'
 import Ads from './Ads'
 import UserProfile from "./UserProfile";
 import Disclaimer from "./Disclaimer";
@@ -59,6 +59,7 @@ class App extends Component {
                                     <Route exact path='/contact' component={ContactUS}/>
                                     <Route exact path='/about' component={AboutUs}/>
                                     <Route exact path='/video/settings' component={VideoSettings}/>
+                                    {userId && <Route exact path='/upload' component={Upload}/>}
                                     <Route exact path='/' component={Homepage}/>
                                 </Switch>
                             </div>

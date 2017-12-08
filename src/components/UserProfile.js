@@ -10,15 +10,6 @@ import UserSettings from "./UserSettings";
 
 class UserProfile extends Component {
 
-
-    state = {
-        login: true, // switch between Login and SignUp
-        username: '',
-        password: '',
-        profilePictureUrl: 'https://s3-ap-southeast-2.amazonaws.com/adme-hyundai/wp-content/uploads/2017/05/18144805/wallpaper-for-facebook-profile-photo.jpg',
-        name: ''
-    }
-
     constructor(props) {
         super(props);
         this.state = {
@@ -79,7 +70,10 @@ class UserProfile extends Component {
                     </div>
 
                     <div className='UserLinks'>
-
+    
+                        <div className='upload'>
+                            <Link to='/Upload' className='UserLinks'>Upload a video</Link>
+                        </div>
                         <div className='UserUploads'>
                             <Link to='/' className='UserLinks'>Uploads</Link>
                         </div>

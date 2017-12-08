@@ -151,10 +151,11 @@ class Login extends Component {
                         password,
                     }
                 })
-                .then(() => {
+                .then((result) => {
                     this.setState({
                         loading: false
                     })
+                    return result
                 })
                 .catch((error) => {
                     this.setState({
@@ -182,10 +183,11 @@ class Login extends Component {
                             name
                         }
                     })
-                    .then(() => {
+                    .then((result) => {
                         this.setState({
                             loading: false
                         })
+                        return result
                     })
                     .catch(() => {
                         this.setState({
@@ -214,7 +216,7 @@ class Login extends Component {
 }
 
 const SIGNUP_USER_MUTATION = gql`
-mutation SignupUserMutation ($email: String!, $password: String!, $name: String) {
+mutation SignupUserMutation ($email: String!, $password: String!, $name: String!) {
     signupUser(email: $email, password: $password, name: $name) {
         id
         token
