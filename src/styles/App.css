@@ -127,6 +127,7 @@ html {
     right: 99%;
     background-color: #201F1D;
     overflow: hidden;
+    margin:0px;
     width: 0;
     height: 100%;
     transition: 1.4s ease;
@@ -150,10 +151,19 @@ html {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px #fec123;
 }
 .text {
-
+    text-align: left;
+    justify-content: space-between;
+    padding-bottom: 10%;
 }
 .nImage {
     opacity: 1.0;
+    padding:0px;
+    margin:0px;
+}
+
+.projectMotive {
+    text-align: left;
+    justify-content: space-around;
 }
 
 .pageContentsBottom:hover .overlayContainer {
