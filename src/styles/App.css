@@ -171,3 +171,8 @@ html {
     width: 65%;
     left:15%;
 }
+.LearnMore {
+    font-weight: bold;
+    padding:2%;
+    float:right;
+}

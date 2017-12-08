@@ -16,11 +16,11 @@ class AboutUs extends Component {
                         <div className='text'>
                             <p>
                                 Group Name: Neumont.tv
+                                <br />
+                                <br />
                                 Members:
                                 Priya Vora,
-                                <br />
                                 Adam Holbert,
-                                <br/>
                                 William Walsh
                                 <br />
                             </p>
@@ -36,10 +36,10 @@ class AboutUs extends Component {
                             Users would be able to upload various length of videos on our website,where the data would be persisted within Graph.Cool.
                             We are utilizing React as a library to enhance the view of our web application.
                             We made this decision to learn more about the industry standards and potential job opportunities.
-                            The purpose of our website is not to compete with existing companies, however to give the public another platform that's user friendly and convenient.This project is a means to take advantage of the time and teach ourselves how video streaming works.</p>
-
-                            <br />
-
+                            The purpose of our website is not to compete with existing companies, however to give the public another platform that's user friendly and convenient.This project is a means to take advantage of the time and teach ourselves how video streaming works.
+                            <div className='LearnMore'>
+                                Learn More
+                            </div></p>
                         </div>
 
                     </div>
