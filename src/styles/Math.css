@@ -19,3 +19,13 @@
 .unselected{
     background-color: gray;
 }
+
+.output{
+    background-color: #2c2a2a;
+    border: 2px solid #fec123;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 22px;
+    padding: 20px;
+    color: white;
+}

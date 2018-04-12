@@ -40,7 +40,7 @@ class Math extends Component {
         return (
             <div className='uploadContainer'>
                 <div>
-                    <div class="mathFlex">
+                    <div className="mathFlex">
                         <div onClick={(e) => this.setState({twoXtwo: true})} className={(this.state.twoXtwo ?
                             'selected' : 'unselected') + " button"}>
                             2X2
@@ -159,10 +159,10 @@ class Math extends Component {
                         </div>
                     </div>
                 }
-                <div className="button mathFlex" onClick={() => this.ProcessMatrix(this)}>
-                    Get Determinant
+                <div className="button mathFlex"></div>
+                <div className='output'>
+                    {this.state.output}
                 </div>
-                {this.state.output}
             </div>
         )
     }
@@ -175,6 +175,12 @@ function matrixMath(state) {
         for (let i = 0; i < matrix.length; i++) {
             matrix[i] = parseInt(matrix[i]) || 0
         }
+        matrix=[
+            [matrix[0], matrix[1]],
+            [matrix[2], matrix[3]]
+        ]
+        
+        display += "Determinant: " + getDeterminant(matrix)
         
     } else {
         matrix = [state.x3n1, state.x3n2, state.x3n3, state.x3n4, state.x3n5, state.x3n6, state.x3n7, state.x3n8
@@ -182,9 +188,41 @@ function matrixMath(state) {
         for (let i = 0; i < matrix.length; i++) {
             matrix[i] = parseInt(matrix[i]) || 0
         }
-        
+        matrix = [
+            [matrix[0], matrix[1], matrix[2]],
+            [matrix[3], matrix[4], matrix[5]],
+            [matrix[6], matrix[7], matrix[8]]
+        ]
+    
+        display += "Determinant: " + getDeterminant(matrix)
     }
     return display
+}
+
+function getDeterminant(matrix){
+    if(matrix[0].length === 2){
+        return ((matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]));
+    } else if (matrix[0].length === 3) {
+        
+        console.log([
+            [matrix[1][1], matrix[1][2]],
+            [matrix[2][1], matrix[2][2]]
+        ]);
+        return (
+            (matrix[0][0]*getDeterminant([
+                [matrix[1][1], matrix[1][2]],
+                [matrix[2][1], matrix[2][2]]
+            ])) +
+            (matrix[0][1]*-1*getDeterminant([
+                [matrix[1][0], matrix[1][2]],
+                [matrix[2][0], matrix[2][2]]
+            ])) +
+            (matrix[0][2]*getDeterminant([
+                [matrix[1][0], matrix[1][1]],
+                [matrix[2][0], matrix[2][1]]
+            ]))
+        );
+    }
 }
 
 
