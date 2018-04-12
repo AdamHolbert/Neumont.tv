@@ -15,6 +15,7 @@ import ContactUS from "./ContactUs"
 import MoreInfo from "./MoreInfo";
 import Settings from "./Settings";
 import AboutUs from "./AboutUs";
+import Math from "./Math";
 
 
 class App extends Component {
@@ -37,7 +38,7 @@ class App extends Component {
                 <Disclaimer hideDisclaimer={this.hideDisclaimer}/>
             )
         } else {
-            const userId = localStorage.getItem(GC_USER_ID)
+            const userId = localStorage.getItem(GC_USER_ID);
             return (
                 <div className='pageContents'>
                     <div>
@@ -58,6 +59,7 @@ class App extends Component {
                                     <Route exact path='/settings' component={Settings}/>
                                     <Route exact path='/contact' component={ContactUS}/>
                                     <Route exact path='/about' component={AboutUs}/>
+                                    <Route exact path='/math' component={Math}/>
                                     <Route exact path='/video/settings' component={VideoSettings}/>
                                     {userId && <Route exact path='/upload' component={Upload}/>}
                                     <Route exact path='/' component={Homepage}/>
@@ -65,7 +67,7 @@ class App extends Component {
                             </div>
 
                             <div className='Ads'>
-                                    <Ads/>
+                                <Ads/>
                             </div>
                         </div>
                     </div>
