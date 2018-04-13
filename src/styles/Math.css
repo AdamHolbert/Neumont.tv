@@ -29,3 +29,37 @@
     padding: 20px;
     color: white;
 }
+
+.multipleMatrixDisplay {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.matrixDisplay {
+    padding: 5px;
+    background-color: #2c2a2a;
+    border: 1px solid #fec123;
+    color: white;
+    margin: 2px 6px 2px 6px;
+    border-radius: 6px;
+}
+
+.matrixRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.matrixColumn {
+    padding: 2px 4px 2px 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.selectable {
+    background-color: #2c2a2a;
+}
+
+.selectable:hover {
+    background-color: #4c4a4a;
+}
